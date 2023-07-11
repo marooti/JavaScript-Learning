@@ -1,0 +1,25 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.container{
+  width: 100% !important;
+}
+.header{
+  background-color: black;
+  color: white;
+  padding: 10px 10px 10px 10px;
+}
+td, th {
+  // border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f7f2f2;
+}
+.late{
+  color: rgb(202, 161, 24)
+}

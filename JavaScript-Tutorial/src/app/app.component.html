@@ -1,0 +1,196 @@
+
+<app-pdf-template></app-pdf-template>
+<div class="container " style="display: none;">
+  <div class="row">
+    <div class="col-8 p-4" id="htmlData">
+      <div class="border-bottom-2 border-400 pb-3">
+        <span class="text-4xl font-bold">
+          HSS Security
+        </span>
+      </div>
+      <!-- Report Details is Bellow -->
+
+      <div class="report-detial mt-6">
+        <div class="report">
+          <span class="text-5xl">Report</span>
+        </div>
+        <!-- Site Details & shift deatils -->
+        <div class="site-details mt-3">
+          <div class="flex justify-content-between">
+            <div class="left-side text-2xl">
+              <span>Site Details</span>
+            </div>
+            <div class="right-side text-2xl">
+              <span>Shift Details</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code time -->
+        <div class="flex justify-content-between mt-2">
+          <div class="left-code">
+            <span class="font-bold text-base">
+              Code .....
+            </span>
+          </div>
+          <div class="right-code flex text-base">
+            <div>
+              <span class="font-bold pr-2">Date: </span>
+            </div>
+            <span>
+              04 Jul 2023
+            </span>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="flex justify-content-between mt-2">
+          <div class="left-code">
+            <span class="text-base">
+              WAPDA Town Lahore, Pakistan
+            </span>
+          </div>
+          <div class="right-code flex text-lg">
+            <div>
+              <span class="font-bold pr-2">Time: </span>
+            </div>
+            <span>
+              15:00 - 19:00
+            </span>
+          </div>
+        </div>
+
+        <!-- Assigned -->
+        <div class="site-details mt-2">
+          <div class="">
+            <div class="left-side text-xl">
+              <span>Assigned Managers</span>
+            </div>
+            <div class="right-side text-base">
+              <span>Furqan Khan</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assigned -->
+        <div class="site-details my-2">
+          <div class="">
+            <div class="left-side text-xl">
+              <span>Assigned Staff</span>
+            </div>
+            <div class="right-side text-base">
+              <span>Sajid Khan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+
+      </div>
+      <table class="table table-bordered mt-4">
+        <tr class="table-primary bg-black" class="header">
+          <th class="p-3">Time</th>
+          <th>Type</th>
+          <th>Discription</th>
+        </tr>
+        <tr *ngFor="let user of USERS">
+          <td>{{user.time}}</td>
+          <td>{{user.type}}</td>
+          <td>
+            <div class="flex">
+              <div class="font-bold">
+                <span class="pr-2">{{user.duty}} :</span>
+              </div>
+              <div class="font-bold late">
+                <span>{{user.duty_time}}</span>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="font-bold ">
+                <span class="pr-2">{{user.staff}} :</span>
+              </div>
+              <div class="">
+                <span>{{user.staff_name}}</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr *ngFor="let user of VisitorIn">
+          <td>{{user.time}}</td>
+          <td>{{user.type}}</td>
+          <td>
+            <!-- Vistor In Out Details -->
+            <div class="flex">
+              <div class="font-bold ">
+                <span class="pr-2">Visitor Enter </span>
+              </div>
+              <div class="">
+                <span class="font-bold">{{user.vistorId}}</span>
+              </div>
+            </div>
+            <!-- Vistor In Out Details -->
+            <div class="flex mt-1">
+              <div class="">
+                <span class="pr-2">Time in :</span>
+              </div>
+              <div class="">
+                <span class="">{{user.timeIn}}</span>
+              </div>
+            </div>
+            <!-- Vistor In Out Details -->
+            <div class="flex mt-1">
+              <div class=" ">
+                <span class="pr-2">Time out :</span>
+              </div>
+              <div class="">
+                <span class="">{{user.timeOut}}</span>
+              </div>
+            </div>
+            <!-- Vistor In Out Details -->
+            <div class="flex my-5">
+              <div class="">
+                <span class="pr-2">Phone Number :</span>
+              </div>
+              <div class="">
+                <span class="">{{user.phoneNumber}}</span>
+              </div>
+            </div>
+            <!-- Vistor In Out Details -->
+            <div class="flex mt-1">
+              <div class="">
+                <span class="pr-2">Visitor Status :</span>
+              </div>
+              <div class="">
+                <span class="">{{user.vistorStatus}}</span>
+              </div>
+            </div>
+            <!-- Vistor In Out Details -->
+            <div class="flex mt-1">
+              <div class="">
+                <span class="pr-2">Visitor Name :</span>
+              </div>
+              <div class="">
+                <span class="">{{user.vistorName}}</span>
+              </div>
+            </div>
+            <!-- Vistor In Out Details -->
+            <div class="flex mt-1">
+              <div class="">
+                <span class="pr-2">Phone :</span>
+              </div>
+              <div class="">
+                <span class="">{{user.phone}}</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-4 text-right">
+      <button class="btn btn-success btn-block" (click)="openPDF()">Download PDF</button>
+    </div>
+  </div>
+</div>
+
+
+<app-jspdf></app-jspdf>
